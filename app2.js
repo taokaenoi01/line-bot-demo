@@ -10,7 +10,7 @@ app.use(bodyParser.json())
 app.post('/webhook', (req, res) => {
     let reply_token = req.body.events[0].replyToken
     let msg = req.body.events[0].message.text
-    let usid = req.body.events[0].source.userId
+    let userid = req.body.events[0].source.userId
     reply(reply_token, msg)
     res.sendStatus(200)
 })
@@ -24,7 +24,7 @@ function reply(reply_token, msg) {
         replyToken: reply_token,
         messages: [{
             type: 'text',
-            text: usid
+            text: userid
         }]
     })
     request.post({
