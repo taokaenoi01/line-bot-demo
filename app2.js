@@ -25,6 +25,10 @@ function reply(reply_token, msg) {
         messages: [{
             type: 'text',
             text: 'hello my friend'
+        }],
+        messages: [{
+            type: 'text',
+            text: 'How are you ?'
         }]
     })
     request.post({
